@@ -12,8 +12,14 @@ const app = express()
 app.use(express.static(path.join(path.dirname(__dirname) + '/client')));
 
 // router
-app.use('/', (req, res) =>{
-    res.sendFile(path.join(path.dirname(__dirname) + '/client/index.html'))
+app.use('/register', (req, res) => {
+    res.sendFile(path.join(path.dirname(__dirname) + '/client/register.html'))
+})
+app.use('/login', (req, res) => {
+    res.sendFile(path.join(path.dirname(__dirname) + '/client/login.html'))
+})
+app.use('/admin', (req, res) => {
+    res.sendFile(path.join(path.dirname(__dirname) + '/client/admin.html'))
 })
 
 
