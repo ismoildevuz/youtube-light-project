@@ -24,14 +24,14 @@
         <main class="main">
             <div class="wrapper">
                 <h1 class="title">Upload a video</h1>
-                <form action="#" class="site-form">
+                <form action="/admin" class="site-form" enctype="multipart/form-data" method="post">
                     <label>
-                        <input type="text" id="videoInput" placeholder="video title" required>
+                        <input type="text" id="videoInput" placeholder="video title" required name="title">
                     </label>
                     <label class="custom-upload">
                         <span class="zmdi zmdi-upload"></span>
-                        <span class="file-name">click upload a video</span>
-                        <input type="file" id="uploadInput" accept="video/*">
+                        <span class="file-name">Upload video</span>
+                        <input type="file" id="uploadInput" accept="video/*" name="upload_video" required>
                     </label>
                     <input type="submit" value="Upload" id="submitButton">
                 </form>
