@@ -5,6 +5,7 @@ const path = require('path');
 
 // router
 const RegisterRouter = require('./router/register.router');
+const LoginRouter = require('./router/login.router');
 
 
 require('dotenv').config();
@@ -22,14 +23,13 @@ app.use(session({
 }));
 
 app.use(RegisterRouter);
+app.use(LoginRouter);
 
 
 
 
 
-app.use('/login', (req, res) => {
-    res.sendFile(path.join(path.dirname(__dirname) + '/client/login.html'));
-});
+
 app.use('/admin', (req, res) => {
     res.sendFile(path.join(path.dirname(__dirname) + '/client/admin.html'));
 });
