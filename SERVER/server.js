@@ -1,31 +1,39 @@
-const express = require('express')
-const path = require('path')
-
-
-require('dotenv').config()
-const PORT = process.env.PORT || 4040
-
-const app = express()
-// app.use(express.json())
-
-// middleware
-app.use(express.static(path.join(path.dirname(__dirname) + '/client')));
+const express = require('express');
+const session = require('express-session');
+const upload = require('express-fileupload');
+const path = require('path');
 
 // router
-app.use('/register', (req, res) => {
-    res.sendFile(path.join(path.dirname(__dirname) + '/client/register.html'))
-})
+const RegisterRouter = require('./router/register.router');
+
+
+require('dotenv').config();
+const PORT = process.env.PORT || 4040;
+const app = express();
+
+app.use(express.static(path.join(path.dirname(__dirname) + '/client')));
+app.use(express.json());
+app.use(upload());
+app.use(express.urlencoded({ extended: true }));
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(RegisterRouter);
+
+
+
+
+
 app.use('/login', (req, res) => {
-    res.sendFile(path.join(path.dirname(__dirname) + '/client/login.html'))
-})
+    res.sendFile(path.join(path.dirname(__dirname) + '/client/login.html'));
+});
 app.use('/admin', (req, res) => {
-    res.sendFile(path.join(path.dirname(__dirname) + '/client/admin.html'))
-})
-
-
-
-
+    res.sendFile(path.join(path.dirname(__dirname) + '/client/admin.html'));
+});
 
 app.listen(PORT, () => {
     console.log(`Port: ${PORT}. Server is running...`);
-})
+});
