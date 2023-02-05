@@ -8,6 +8,7 @@ const path = require('path');
 const RegisterRouter = require('./router/register.router');
 const LoginRouter = require('./router/login.router');
 const AdminRouter = require('./router/admin.router');
+const HomePageRouter = require('./router/homepage.router');
 
 
 require('dotenv').config();
@@ -15,6 +16,7 @@ const PORT = process.env.PORT || 4040;
 const app = express();
 
 app.use(express.static(path.join(path.dirname(__dirname) + '/client')));
+app.use(express.static(path.join(__dirname + '/uploaded')));
 app.use(express.json());
 app.use(upload());
 app.use(cookieParser());
@@ -28,15 +30,13 @@ app.use(session({
 app.use(RegisterRouter);
 app.use(LoginRouter);
 app.use(AdminRouter);
+app.use(HomePageRouter);
 
 
 
 
 
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(path.dirname(__dirname)) + '/client/homepage.html');
-});
 
 app.listen(PORT, () => {
     console.log(`Port: ${PORT}. Server is running...`);

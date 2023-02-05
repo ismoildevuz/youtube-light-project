@@ -24,7 +24,7 @@ const Login = {
         // req.session.isSignedIn = true;
         // req.session.token = token;
         
-        res.cookie('token', token, { httpOnly: true });
+        res.cookie('token', token);
         res.redirect('/');
     }
 };

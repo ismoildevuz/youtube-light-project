@@ -2,16 +2,45 @@
     {
         "fileName": "f35fff8a-0414-4a32-88f3-c8a29f58b1c2.mp4",
         "userId": "ba0d8427-0347-47b0-a905-3694b7ced228",
-        "title": "asad"
+        "title": "asad",
+        "dateUploaded": "02/08/2022",
+        "time": "15:36",
+        "size": "20 MB"
     },
     {
         "fileName": "d3510194-d110-4144-99cd-d576b1566a61.mp4",
         "userId": "ba0d8427-0347-47b0-a905-3694b7ced228",
-        "title": "yangi video"
+        "title": "yangi video",
+        "dateUploaded": "02/08/2022",
+        "time": "15:36",
+        "size": "20 MB"
     },
     {
-        "fileName": "541335b8-8dd9-456d-892a-878eb75007ab.mp4",
-        "userId": "7445cfcf-85b9-4cf3-a76d-6bd454ee84a2",
-        "title": "boshqa video"
+        "fileName": "040afbfe-e757-4b13-b822-d1a8414e8430.mp4",
+        "userId": "a0c40349-4b69-48e1-965e-0f99128f6d4a",
+        "title": "Johns first video",
+        "dateUploaded": "02/05/2023",
+        "time": "15:49"
+    },
+    {
+        "fileName": "b5bf5746-5c2e-4d13-8a35-e3ca3ccefd21.mp4",
+        "userId": "a0c40349-4b69-48e1-965e-0f99128f6d4a",
+        "title": "Johns first video",
+        "dateUploaded": "02/05/2023",
+        "time": "18:21"
+    },
+    {
+        "fileName": "336b6827-dc87-4963-8894-19cf6d74b4a1.mp4",
+        "userId": "a0c40349-4b69-48e1-965e-0f99128f6d4a",
+        "title": "Johns second video",
+        "dateUploaded": "02/05/2023",
+        "time": "18:22"
+    },
+    {
+        "fileName": "c72567d6-3d8f-4ebf-87b5-069610dae285.mp4",
+        "userId": "ba0d8427-0347-47b0-a905-3694b7ced228",
+        "title": "Ismoils first video",
+        "dateUploaded": "02/05/2023",
+        "time": "18:35"
     }
 ]

@@ -134,16 +134,17 @@
                     </svg>
                 </button>
                 <a href="/admin">
-                    <img class="avatar-img" src="./img/avatar.jpg" alt="avatar-img" width="32px" height="32px">
+                    <img class="avatar-img" src="./img/avatar.jpg" alt="avatar-img" width="32px" height="32px"
+                        id="avatarImage">
                 </a>
             </section>
         </header>
         <main class="main">
             <div class="left-menu-wrapper">
-                <ul class="navbar-list">
+                <ul class="navbar-list" id="channels-list">
                     <h1>YouTube Members</h1>
                     <li class="channel active" data_id="main">
-                        <a href="#">
+                        <a href="/">
                             <svg viewbox="0 0 24 24" focusable="false"
                                 style="pointer-events: none; display: block; width: 30px; height: 30px;">
                                 <g>
@@ -154,20 +155,20 @@
                         </a>
                     </li>
                     <!-- fake user -->
-                    <li class="channel" data-id="1">
+                    <!-- <li class="channel" data-id="1">
                         <a href="#">
                             <img src="https://cdn-icons-png.flaticon.com/512/146/146031.png" alt="channel-icon"
                                 width="30px" height="30px">
                             <span>Hikmat</span>
                         </a>
-                    </li>
+                    </li> -->
 
                 </ul>
             </div>
             <div class="iframes-wrapper">
-                <ul class="iframes-list">
+                <ul class="iframes-list" id="videos-list">
                     <!-- fake video -->
-                    <li class="iframe">
+                    <!-- <li class="iframe">
                         <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls=""></video>
                         <div class="iframe-footer">
                             <img src="https://cdn-icons-png.flaticon.com/512/146/146031.png" alt="channel-icon">
@@ -181,13 +182,78 @@
                                 </a>
                             </div>
                         </div>
-                    </li>
+                    </li> -->
 
                 </ul>
             </div>
         </main>
     </div>
+    <script>
+        fetch('http://localhost:4040/channels')
+            .then(response => response.json())
+            .then(channels => {
+                let channelsList = document.querySelector('#channels-list');
+                for (let channel of channels) {
+                    channelsList.innerHTML += `<li class="channel" data-id="1">
+                        <a href="/channels/${channel.id}">
+                            <img src="avatar/${channel.avatar}" alt="channel-icon"
+                                width="30px" height="30px">
+                                <span>${channel.username}</span>
+                        </a>
+                    </li>`  ;
+                }
+            })
+        fetch('http://localhost:4040/videos')
+            .then(response => response.json())
+            .then(videos => {
+                let videosList = document.querySelector('#videos-list');
+                for (let video of videos) {
+                    fetch(`http://localhost:4040/channels/${video.userId}`)
+                        .then(response => response.json())
+                        .then(channel => {
+                            fetch(`http://localhost:4040/get-video-size/${video.fileName}`)
+                                .then(response => response.json())
+                                .then(data => {
+                                    videosList.innerHTML += `<li class="iframe">
+                                <video src="video/${video.fileName}" controls=""></video>
+                                <div class="iframe-footer">
+                                    <img src="avatar/${channel.avatar}" alt="channel-icon">
+                                    <div class="iframe-footer-text">
+                                        <h2 class="channel-name">${video.title}</h2>
+                                        <h3 class="iframe-title">${channel.username}</h3>
+                                        <time class="uploaded-time">${video.dateUploaded} | ${video.time}</time>
+                                        <a class="download" href="#">
+                                            <span>${data.size}</span>
+                                            <img src="./img/download.png">
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>`;
+                                })
+                        })
+                }
+            })
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        let token = getCookie("token");
+        fetch(`http://localhost:4040/admin/${token}`)
+            .then(response => response.json())
+            .then(admin => { avatarImage.src = 'avatar/' + admin.avatar })
 
+    </script>
 </body>
 
 </html>

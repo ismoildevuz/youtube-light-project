@@ -10,5 +10,11 @@
         "avatar": "2a50f025-7d9b-4ef5-81a6-23ed3ccfa276.jpg",
         "username": "ismoil4432",
         "password": "$2a$10$sYvGlBpc1rUqSALuEmyga.cajOHcdQL.ne3086x/i2lx7EqA4SEkm"
+    },
+    {
+        "id": "a0c40349-4b69-48e1-965e-0f99128f6d4a",
+        "avatar": "bea04c10-e292-4163-8aab-4f619614bd63.jpg",
+        "username": "John",
+        "password": "$2a$10$1t5E0lKj7QCLzWC8trGkHOTA8pGa1rL3WWEj6Mc8yD0FYpJWWQ9TO"
     }
 ]

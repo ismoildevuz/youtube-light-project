@@ -1,7 +1,11 @@
+const fs = require('fs');
 const path = require('path');
 const uuid = require('uuid');
 const { verify } = require('../api/jwt_api')
 const { readFile, writeFile } = require('../api/fs_api');
+
+
+
 
 const Admin = {
     GET: (req, res) => {
@@ -16,7 +20,24 @@ const Admin = {
         let fileName = uuid.v4() + path.extname(file.name);
         file.mv('./uploaded/video/' + fileName);
 
-        videos.push({ fileName, userId: user.id, title });
+        const date = new Date();
+        const dateUploaded = date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+        });
+
+        const hours = date.getHours().toString().padStart(2, '0');
+        const minutes = date.getMinutes().toString().padStart(2, '0');
+        const time = `${hours}:${minutes}`;
+
+        // const stats = fs.statSync(path.join(path.dirname(__dirname) + `/uploaded/video/${fileName}`));
+        // const fileSizeInBytes = stats.size;
+        // const fileSizeInMegabytes = fileSizeInBytes / 1000000.0;
+        // let size = `${fileSizeInMegabytes.toFixed(2)} MB`;
+        // console.log(size);
+
+        videos.push({ fileName, userId: user.id, title, dateUploaded, time });
         writeFile('videos.json', videos);
         res.redirect('/admin');
     }
