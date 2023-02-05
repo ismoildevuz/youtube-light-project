@@ -61,7 +61,7 @@
                 </a>
             </section>
             <form action="/search-videos" class="search-box" method="post">
-                <input list="datalist" type="text" placeholder="Search" class="search-input" name="searchByTitle">
+                <input list="datalist" type="text" placeholder="Search" class="search-input" name="searchByTitle" id="searchByTitle">
                 <datalist id="datalist">
                     <!-- bu fake data -->
                     <!-- <option value="Falonchiga otvet">
@@ -77,10 +77,10 @@
                         </g>
                     </svg>
                 </button>
-                <button class="search-btn hover-after"
+                <a class="search-btn hover-after" onclick="rec()"
                     style="background: none; border: none; margin-left: 10px; width: 20px;">
                     <img src="img/mic.svg" alt="mic" width="20" height="25">
-                </button>
+                </a>
             </form>
             <section class="header-right">
                 <button type="button" class="voice-btn hover-after">
@@ -189,6 +189,24 @@
         </main>
     </div>
     <script>
+        function rec() {
+            if (!('webkitSpeechRecognition' in window)) {
+                console.error('Web Speech API is not supported by this browser.');
+                return;
+            }
+
+            const recognition = new webkitSpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+
+            recognition.onresult = (event) => {
+                const speechToText = event.results[0][0].transcript;
+                console.log(speechToText);
+                searchByTitle.value = speechToText;
+            };
+
+            recognition.start();
+        }
         function getCookie(cname) {
             let name = cname + "=";
             let decodedCookie = decodeURIComponent(document.cookie);
