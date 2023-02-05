@@ -30,7 +30,7 @@ const HomePage = {
     },
     GET_VIDEOS: (req, res) => {
         let videos = readFile('videos.json');
-        res.send(JSON.stringify(videos));
+        res.send(JSON.stringify(videos))
     },
     GET_USER: (req, res) => {
         let user = verify(req.params.token)
@@ -53,6 +53,14 @@ const HomePage = {
             const sizeInMB = sizeInBytes / 1000000.0;
             res.send(JSON.stringify({ size: `${sizeInMB.toFixed(2)} MB` }));
         });
+    },
+    SEARCH_PAGE: (req, res) => {
+        res.cookie('searchByTitle', req.body.searchByTitle)
+        res.sendFile(path.join(path.dirname(path.dirname(__dirname)) + '/client/search.html'));
+    },
+    SEARCH_VIDEOS: (req, res) => {
+        let videos = readFile('videos.json').filter(v => v.title.toLowerCase() === req.params.searchByTitle.toLowerCase());
+        res.send(JSON.stringify(videos))
     }
 };
 

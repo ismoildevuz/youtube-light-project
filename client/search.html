@@ -218,7 +218,7 @@
                     </li>`  ;
                 }
             })
-        fetch('http://localhost:4040/videos')
+        fetch(`http://localhost:4040/search-videos/${getCookie('searchByTitle')}`)
             .then(response => response.json())
             .then(videos => {
                 let videosList = document.querySelector('#videos-list');
