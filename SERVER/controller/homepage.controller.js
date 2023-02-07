@@ -5,7 +5,10 @@ const { readFile, writeFile } = require('../api/fs_api');
 
 const HomePage = {
     GET: (req, res) => {
-        res.sendFile(path.join(path.dirname(path.dirname(__dirname)) + '/client/homepage.html'));
+        res.redirect('/homepage');
+    },
+    HOME_PAGE: (req, res) => {
+        res.sendFile(path.join(path.dirname(path.dirname(__dirname)) + '/client/home_page.html'));
     },
     GET_CHANNELS: (req, res) => {
         let users = readFile('users.json').map(u => {
@@ -17,7 +20,7 @@ const HomePage = {
         });
         res.send(JSON.stringify(users));
     },
-    GET_CHANNEL: (req, res) => {
+    CHANNEL_INFO: (req, res) => {
         let userId = req.params.userId
         let user = readFile('users.json').map(u => {
             return {
@@ -28,8 +31,17 @@ const HomePage = {
         }).find(u => u.id === userId);
         res.send(JSON.stringify(user));
     },
+    CHANNEL_PAGE: (req, res) => {
+        res.cookie('channel', req.params.userId);
+        res.sendFile(path.join(path.dirname(path.dirname(__dirname)) + '/client/channel.html'));
+    },
+    CHANNEL_VIDEOS: (req, res) => {
+        let videos = readFile('videos.json').filter(v => v.userId === req.params.userId);
+        res.send(JSON.stringify(videos))
+    },
     GET_VIDEOS: (req, res) => {
         let videos = readFile('videos.json');
+        console.log(videos);
         res.send(JSON.stringify(videos))
     },
     GET_USER: (req, res) => {
