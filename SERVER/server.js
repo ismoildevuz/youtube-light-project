@@ -10,6 +10,9 @@ const LoginRouter = require('./router/login.router');
 const AdminRouter = require('./router/admin.router');
 const HomePageRouter = require('./router/homepage.router');
 
+//middleware
+const logined = require('./middlewares/logined');
+const logouted = require('./middlewares/logouted');
 
 require('dotenv').config();
 const PORT = process.env.PORT || 4040;
@@ -29,6 +32,10 @@ app.use(session({
 
 app.use(RegisterRouter);
 app.use(LoginRouter);
+
+app.use(logined);
+app.use(logouted);
+
 app.use(AdminRouter);
 app.use(HomePageRouter);
 

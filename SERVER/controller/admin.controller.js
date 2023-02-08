@@ -65,6 +65,11 @@ const Admin = {
         writeFile('videos.json', videos);
         res.redirect('back');
     },
+    LOG_OUT: (req, res) => {
+        req.session.destroy(() => {
+            res.redirect('/login')
+        });
+    }
 };
 
 module.exports = Admin;

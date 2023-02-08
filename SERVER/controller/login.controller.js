@@ -21,8 +21,8 @@ const Login = {
 
         let token = jwt.sign({ id: founded.id }, process.env.SECRET_KEY, { expiresIn: '2h' });
 
-        // req.session.isSignedIn = true;
-        // req.session.token = token;
+        req.session.isLogined = true;
+        req.session.token = token;
         
         res.cookie('token', token);
         res.redirect('/');

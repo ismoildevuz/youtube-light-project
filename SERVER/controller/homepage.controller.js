@@ -41,7 +41,6 @@ const HomePage = {
     },
     GET_VIDEOS: (req, res) => {
         let videos = readFile('videos.json');
-        console.log(videos);
         res.send(JSON.stringify(videos))
     },
     GET_USER: (req, res) => {
