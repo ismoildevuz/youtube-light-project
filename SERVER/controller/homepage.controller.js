@@ -37,7 +37,7 @@ const HomePage = {
     },
     CHANNEL_VIDEOS: (req, res) => {
         let videos = readFile('videos.json').filter(v => v.userId === req.params.userId);
-        res.send(JSON.stringify(videos))
+        res.send(JSON.stringify(videos));
     },
     GET_VIDEOS: (req, res) => {
         let videos = readFile('videos.json');

@@ -40,7 +40,31 @@ const Admin = {
         videos.push({ fileName, userId: user.id, title, dateUploaded, time });
         writeFile('videos.json', videos);
         res.redirect('/admin');
-    }
+    },
+    GET_VIDEOS: (req, res) => {
+        let videos = readFile('videos.json').filter(v => v.userId === verify(req.params.token).id);
+        res.send(JSON.stringify(videos));
+    },
+    UPDATE_TITLE: (req, res) => {
+        let videos = readFile('videos.json');
+        videos.forEach(video => {
+            if (video.fileName === req.params.fileName) {
+                video.title = req.body.title;
+            }
+        });
+        writeFile('videos.json', videos);
+        res.redirect('back');
+    },
+    DELETE_VIDEO: (req, res) => {
+        let videos = readFile('videos.json');
+        videos.forEach((video, index) => {
+            if (video.fileName === req.params.fileName) {
+                videos.splice(index, 1);
+            }
+        });
+        writeFile('videos.json', videos);
+        res.redirect('back');
+    },
 };
 
 module.exports = Admin;

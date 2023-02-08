@@ -1,1 +1,9 @@
 GET http://localhost:4040/get_videos/all
+
+###
+POST http://localhost:4040/admin/update_title/f35fff8a-0414-4a32-88f3-c8a29f58b1c2.mp4
+Content-Type: application/json
+
+{
+    "title": "test"
+}
