@@ -15,7 +15,7 @@
     <div class="container">
         <div class="wrapper">
             <h1 class="title">Registration Page</h1>
-            <form action="/register" class="site-form" enctype="multipart/form-data" method="post">
+            <form action="/register" class="site-form" id="form" enctype="multipart/form-data" method="post">
                 <label>
                     <span class="zmdi zmdi-account"></span>
                     <input type="text" id="usernameInput" placeholder="Username" required name="username">
@@ -28,7 +28,7 @@
                 <label class="custom-upload">
                     <span class="zmdi zmdi-upload"></span>
                     <span class="file-name">Upload avatar picture</span>
-                    <input type="file" id="uploadInput" accept="image/*" required name="upload_image">
+                    <input type="file" id="uploadInput" accept="image/*" name="upload_image" required>
                 </label>
                 <input type="submit" value="Register" id="submitButton">
             </form>
@@ -36,6 +36,8 @@
             <img src="img/signup-image.jpg" alt="signup-image" class="signup-image">
         </div>
     </div>
+    <script>
 
+    </script>
 </body>
 </html>

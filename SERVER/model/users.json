@@ -1,20 +1,14 @@
 [
     {
-        "id": "ba0d8427-0347-47b0-a905-3694b7ced228",
-        "avatar": "cec60337-7e2a-4252-a6dd-d60e23e41ead.jpg",
+        "id": "122af97f-2f02-4826-aad3-9994273a2bef",
+        "avatar": "6f9dde9d-5605-4094-b735-a7deaf5cc9a9.jpg",
         "username": "Ismoil",
-        "password": "$2a$10$kKiU4PeniTeVZU9OQ3dzYOrAuCMLR9CWcadss65rP1Qz1G6VokOZi"
+        "password": "$2a$10$yks5gDxmk8vAznSB.WyJ1.ZfbUgtjqFTiXTSgp6sHKlrvABeecuQS"
     },
     {
-        "id": "7445cfcf-85b9-4cf3-a76d-6bd454ee84a2",
-        "avatar": "2a50f025-7d9b-4ef5-81a6-23ed3ccfa276.jpg",
-        "username": "ismoil4432",
-        "password": "$2a$10$sYvGlBpc1rUqSALuEmyga.cajOHcdQL.ne3086x/i2lx7EqA4SEkm"
-    },
-    {
-        "id": "a0c40349-4b69-48e1-965e-0f99128f6d4a",
-        "avatar": "bea04c10-e292-4163-8aab-4f619614bd63.jpg",
+        "id": "f7d88763-ea98-4bfb-81dc-444d04fc7adf",
+        "avatar": "a87a555f-f2af-4633-ad75-10ae3ab24432.jpg",
         "username": "John",
-        "password": "$2a$10$1t5E0lKj7QCLzWC8trGkHOTA8pGa1rL3WWEj6Mc8yD0FYpJWWQ9TO"
+        "password": "$2a$10$VXw49jswECDL4l4kU4Z99eVWX0.3f5qZNqqEpu1GX.kAK6UnREFNG"
     }
 ]

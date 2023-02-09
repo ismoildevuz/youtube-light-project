@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const uuid = require('uuid');
 const { verify } = require('../api/jwt_api')
-const { readFile, writeFile } = require('../api/fs_api');
+const { readFile, writeFile, deleteFile } = require('../api/fs_api');
 
 
 
@@ -63,6 +63,7 @@ const Admin = {
             }
         });
         writeFile('videos.json', videos);
+        deleteFile(req.params.fileName)
         res.redirect('back');
     },
     LOG_OUT: (req, res) => {

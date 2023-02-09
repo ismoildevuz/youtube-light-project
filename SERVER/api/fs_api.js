@@ -8,7 +8,12 @@ const writeFile = (fileName, data) => {
     return fs.writeFileSync(`./model/${fileName}`, JSON.stringify(data, null, 4));
 }
 
+const deleteFile = (fileName) => {
+    return fs.unlinkSync(`./uploaded/video/${fileName}`);
+}
+
 module.exports = {
     readFile,
-    writeFile
+    writeFile,
+    deleteFile
 }

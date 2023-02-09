@@ -1,74 +1,23 @@
 [
     {
-        "fileName": "f35fff8a-0414-4a32-88f3-c8a29f58b1c2.mp4",
-        "userId": "ba0d8427-0347-47b0-a905-3694b7ced228",
-        "dateUploaded": "02/08/2022",
-        "time": "15:36",
-        "size": "20 MB",
-        "title": "test"
+        "fileName": "330ecf44-b48d-452a-8812-325a88d62bdd.mp4",
+        "userId": "f7d88763-ea98-4bfb-81dc-444d04fc7adf",
+        "title": "John's video",
+        "dateUploaded": "02/09/2023",
+        "time": "12:09"
     },
     {
-        "fileName": "d3510194-d110-4144-99cd-d576b1566a61.mp4",
-        "userId": "ba0d8427-0347-47b0-a905-3694b7ced228",
+        "fileName": "f8fc6624-8ab1-4607-bd62-e51a1f44b8f2.mp4",
+        "userId": "122af97f-2f02-4826-aad3-9994273a2bef",
+        "title": "test",
+        "dateUploaded": "02/09/2023",
+        "time": "12:21"
+    },
+    {
+        "fileName": "b5d4a654-ef11-4945-95f9-136a8860ad9c.mp4",
+        "userId": "122af97f-2f02-4826-aad3-9994273a2bef",
         "title": "new video",
-        "dateUploaded": "02/08/2022",
-        "time": "15:36",
-        "size": "20 MB"
-    },
-    {
-        "fileName": "040afbfe-e757-4b13-b822-d1a8414e8430.mp4",
-        "userId": "a0c40349-4b69-48e1-965e-0f99128f6d4a",
-        "title": "John's first video",
-        "dateUploaded": "02/05/2023",
-        "time": "15:49"
-    },
-    {
-        "fileName": "336b6827-dc87-4963-8894-19cf6d74b4a1.mp4",
-        "userId": "a0c40349-4b69-48e1-965e-0f99128f6d4a",
-        "title": "John's second video",
-        "dateUploaded": "02/05/2023",
-        "time": "18:22"
-    },
-    {
-        "fileName": "c72567d6-3d8f-4ebf-87b5-069610dae285.mp4",
-        "userId": "ba0d8427-0347-47b0-a905-3694b7ced228",
-        "title": "Jack's first video",
-        "dateUploaded": "02/05/2023",
-        "time": "18:35"
-    },
-    {
-        "fileName": "d8049a67-a377-4447-937e-9fe93bb1126a.mp4",
-        "userId": "ba0d8427-0347-47b0-a905-3694b7ced228",
-        "title": "named video",
-        "dateUploaded": "02/05/2023",
-        "time": "18:52"
-    },
-    {
-        "fileName": "89b1cdb8-04f7-4882-938e-de2fd812c41b.mp4",
-        "userId": "a0c40349-4b69-48e1-965e-0f99128f6d4a",
-        "title": "test video",
-        "dateUploaded": "02/05/2023",
-        "time": "21:42"
-    },
-    {
-        "fileName": "5bfec5a9-c81c-41b2-89c4-178a44b5663c.mp4",
-        "userId": "a0c40349-4b69-48e1-965e-0f99128f6d4a",
-        "title": "title",
-        "dateUploaded": "02/05/2023",
-        "time": "22:19"
-    },
-    {
-        "fileName": "7df5a988-5891-4485-aee9-de3fd545f902.mp4",
-        "userId": "7445cfcf-85b9-4cf3-a76d-6bd454ee84a2",
-        "title": "my video",
-        "dateUploaded": "02/06/2023",
-        "time": "00:47"
-    },
-    {
-        "fileName": "1452a3d3-fef0-4f05-91f1-1b61d1a19768.mp4",
-        "userId": "ba0d8427-0347-47b0-a905-3694b7ced228",
-        "title": "asd",
-        "dateUploaded": "02/08/2023",
-        "time": "21:34"
+        "dateUploaded": "02/09/2023",
+        "time": "12:22"
     }
 ]
